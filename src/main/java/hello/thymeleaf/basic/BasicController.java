@@ -120,6 +120,7 @@ public class BasicController {
         model.addAttribute("user" , new User("UserA", 10));
         return "basic/javascript";
     }
+
     private void addUsers(Model model){
         List<User> list = new ArrayList<>();
         list.add(new User("userA", 10));
