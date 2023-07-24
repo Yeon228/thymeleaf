@@ -2,6 +2,7 @@ package hello.itemservice.web.form;
 
 import hello.itemservice.domain.item.Item;
 import hello.itemservice.domain.item.ItemRepository;
+import hello.itemservice.domain.item.ItemType;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,11 @@ import java.util.Map;
 public class FormItemController {
 
     private final ItemRepository itemRepository;
+
+    @ModelAttribute("itemTypes")
+    public ItemType[] itemTypes(){
+        return ItemType.values();
+    }
 
     //return 값이 이 컨트롤러 안에서는 모든 모델에 들어감
     @ModelAttribute("regions")
